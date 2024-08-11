@@ -1,0 +1,19 @@
+
+services:
+    core-nestjs-firebase:
+        container_name: core-nestjs-firebase
+        image: core-nestjs:dev
+        build:
+           context: .
+           target: builder
+        ports:
+            - ${APP_HOST_PORT}:3000
+            - "${APP_HOST_DEBUG_PORT}:9230"
+        tty: true
+        working_dir: /usr/src/app
+        volumes:
+            - ./:/usr/src/app
+            - /usr/src/app/node_modules   
+        env_file:
+            - .env
+         
