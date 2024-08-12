@@ -23,10 +23,10 @@
     ARG NODE_ENV=dev
     ENV NODE_ENV=${NODE_ENV}
     
-    #COPY package*.json ./
+    COPY package*.json ./
     
     # uncomment the line below and add node_modules to .dockerignore
-    #RUN npm install
+    RUN npm install
     
     #ENV TZ=America/Havana
 
